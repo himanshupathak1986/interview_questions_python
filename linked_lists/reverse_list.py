@@ -1,17 +1,33 @@
 from collections import deque
 
-class list_implemantation:
-    def __init__(self, list):
-        self.returned_list = deque(list)
-    
-    def return_list(self):
-        return self.returned_list
+class node:
+    def __init(self):
+        self.data = 0
+        self.next = None
         
-        
-if __name__ == "__main__":
-    l1 = list_implemantation([1,4,5,6])
-    l2 =l1.return_list()
-    print(l2)
-    l2.reverse()
+class linked_list:
+    def __init__(self):
+        pass
     
-    print("{} is a reversed list".format(l2))
+    def create(self):
+        head = node()
+        curr = head
+        for i in range(1,6):
+            node_object = node()
+            node_object.data = i
+            curr.next = node_object
+            curr = node_object
+            
+        return head
+    
+    def reverse(self, head):
+        prev = None
+        curr = head
+        
+        while curr is not None:
+            next_node = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next_node
+            
+        return prev
